@@ -1,0 +1,40 @@
+STEP 1-2  Mortality / life table
+ age      qx           lx         dx
+   0 0.00075 100000.00000   75.21773
+  20 0.00105  98313.91000  103.46285
+  35 0.00217  96202.19439  208.94155
+  50 0.00683  90841.04338  620.88888
+  65 0.02608  73917.14971 1927.67849
+  80 0.10252  32300.99471 3311.35979
+ 100 0.51501     67.63330   34.83208
+  Check: sum of all deaths = 100,000 (should equal 100,000)
+  Approx. remaining life expectancy at 35: 38.3 years
+
+STEP 3  Present values for 20-yr term at 35, i=4%
+  A (death benefit APV per $1): 0.057861
+  a (annuity-due APV):          13.7420
+  Verification (whole life identity A = 1 - d*a): 0.248959 vs 0.248959
+
+STEP 4-5  Premiums
+  Net premium:   $421.05 per year
+  Gross premium: $562.34 per year  (~$46.86/month)
+  Expense & profit loading: 33.6% above net
+
+STEP 6  Net premium reserves (per policy)
+  t=0: $0, t=5: $1,035, t=10: $1,726, t=15: $1,641, t=19: $509, t=20: $0
+
+STEP 7  Gross premium sensitivity
+interest               0.02   0.03   0.04   0.05   0.06
+mortality_multiplier                                   
+0.8                   492.0  478.0  465.0  452.0  440.0
+1.0                   597.0  579.0  562.0  546.0  531.0
+1.2                   700.0  679.0  659.0  640.0  622.0
+1.5                   855.0  829.0  804.0  781.0  758.0
+
+STEP 8  Portfolio risk (1-year claims, q35 = 0.00217)
+ policies  expected_claims  cv_pct  p995_over_mean_pct
+      100          21768.0   213.6               818.8
+     1000         216899.0    67.7               222.7
+    10000        2169416.0    21.5                61.3
+   100000       21723070.0     6.8                17.8
+
